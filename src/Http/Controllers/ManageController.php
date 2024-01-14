@@ -18,4 +18,17 @@ class ManageController extends \Illuminate\Routing\Controller
             'unallocatedTotal' => $this->entryCode->unallocated()->count()
         ]);
     }
+
+    public function post(\Jarker\Entry\Models\EntryCode $entryCode, \Illuminate\Http\Request $request)
+    {
+        $entryCode->user()->disassociate();
+
+        if ($request->has('userId') && $user = \App\Models\User::find($request->get('userId'))) {
+            $entryCode->user()->associate($user);
+        }
+
+        $entryCode->save();
+
+        return back();
+    }
 }
