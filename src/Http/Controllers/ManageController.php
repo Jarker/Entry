@@ -1,8 +1,6 @@
 <?php
 namespace Jarker\Entry\Http\Controllers;
 
-use Illuminate\Support\Facades\Validator;
-
 class ManageController extends \Illuminate\Routing\Controller
 {
     private const RESULTS_PER_PAGE = 15;
