@@ -1,6 +1,8 @@
 # Entry Code
 JoshBarker.co.uk
 
+Developed on Laravel 10 with PHP 8.2
+
 ### Install
 1. Install the package using Composer:
 ```bash
@@ -24,7 +26,12 @@ php artisan migrate
 use \Jarker\Entry\Models\HasEntryCode;
 ```
 
-5. (Optional) Generate unallocated codes, these can be reallocated on the manage interface
+5. Generate unallocated codes, these can be reallocated on the manage interface
 ```bash
 php artisan entry-code:generate {count}
 ```
+
+### Routes
+`/entry-code/authenticate` For logging in
+
+`/entry-code/manage` For management
