@@ -23,3 +23,8 @@ php artisan migrate
 ```php
 use \Jarker\Entry\Models\HasEntryCode;
 ```
+
+5. (Optional) Generate unallocated codes, these can be reallocated on the manage interface
+```bash
+php artisan entry-code:generate {count}
+```
