@@ -11,4 +11,14 @@ class EntryCode extends Eloquent\Model
     {
         return $query->where('code', $code)->exists();
     }
+
+    public function scopeUnallocated(Eloquent\Builder $query): Eloquent\Builder
+    {
+        return $query->whereNull('user_id');
+    }
+
+    public function user(): Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(\App\Models\User::class);
+    }
 }
