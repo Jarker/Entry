@@ -30,6 +30,12 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
 
     public function boot(): void
     {
+        if ($this->app->runningInConsole()) {
+            $this->commands([
+                Console\Commands\GenerateCommand::class,
+            ]);
+        }
+
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
 
         $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
