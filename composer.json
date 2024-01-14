@@ -1,0 +1,27 @@
+{
+    "name": "jarker/entry",
+    "description": "A Laravel package for managing door entry codes for employees.",
+    "authors": [
+        {
+            "name": "Josh Barker",
+            "email": "josh@joshbarker.co.uk"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Jarker\\Entry\\": "src/"
+        }
+    },
+    "require": {
+        "guzzlehttp/guzzle": "^7.2",
+        "illuminate/support": "^10.39",
+        "illuminate/database": "^v10.39"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Jarker\\Entry\\ServiceProvider"
+            ]
+        }
+    }
+}
