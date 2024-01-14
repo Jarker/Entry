@@ -8,6 +8,10 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
 {
     public function register(): void
     {
+        $this->publishes([
+            __DIR__ . '/../config/entry-code.php' => config_path('entry-code.php'),
+        ], 'entry-code-config');
+
         $this->mergeConfigFrom(__DIR__.'/../config/entry-code.php', 'entry-code');
 
         $this->app->bind(\Jarker\Entry\Services\EntryCode::class, function($app) {
